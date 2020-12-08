@@ -1,3 +1,4 @@
+import { User } from './../../model/user.model';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,5 +7,5 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent {
-  @Input() user: any;
+  @Input() user: User;
 }

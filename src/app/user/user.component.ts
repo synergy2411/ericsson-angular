@@ -1,23 +1,66 @@
-import { Component } from '@angular/core';
+import { USER_DATA } from './../model/mocks';
+import { User } from './../model/user.model';
+import { AfterContentChecked } from '@angular/core';
+import { Component, Input, OnInit, DoCheck, AfterContentInit, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
 
 @Component({
   selector : 'app-user',
   templateUrl : './user.component.html',
   styleUrls : ['./user.component.css']
 })
-export class UserComponent {
-  user = {
-    firstName : 'Bill',
-    lastName : 'Gates',
-    isWorking : true,
-    income  : 50000,
-    company : 'Microsoft',
-    votes : 120,
-    dob : new Date('Dec 21, 1965'),
-    image : 'https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X_400x400.jpg'
-  };
+export class UserComponent implements
+// OnChanges,
+DoCheck,
+AfterContentInit,
+AfterContentChecked,
+AfterViewInit,
+AfterViewChecked,
+OnDestroy,
+OnInit {
 
-  public onMoreInfo(user: any): void {
+  @Input() title: string;
+
+  user: User;
+
+  constructor() { }  //DI
+
+  public onMoreInfo(user: User): void {
     alert(`Mr. ${user.lastName}, is working with ${user.company}!`);
   }
+
+  // ngOnChanges(changes: SimpleChanges) {
+  //   console.log('ngOnChanges', changes);
+  // }
+
+  ngOnInit() {
+    // console.log('ngOnInit');
+    this.user = USER_DATA;
+  }
+  ngDoCheck() {
+    // console.log('ngDoCheck');
+  }
+
+  ngAfterContentInit() {
+    // console.log('ngAfterContentInit');
+  }
+  ngAfterContentChecked() {
+    // console.log('ngAfterContentChecked');
+  }
+  ngAfterViewInit() {
+    // console.log('ngAfterViewInit');
+  }
+
+  ngAfterViewChecked() {
+    // console.log('ngAfterViewChecked');
+  }
+
+  ngOnDestroy() {
+    // console.log('ngOnDestroy');
+  }
+
+
 }
+
+
+
+//  ng serve --port=4300

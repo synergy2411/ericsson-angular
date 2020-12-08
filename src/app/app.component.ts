@@ -7,4 +7,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   title = 'user-app';
+  bool = true;
+
+  onToggleUser() {
+    this.bool = !this.bool;
+  }
+
 }

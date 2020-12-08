@@ -1,3 +1,4 @@
+import { User } from './../../model/user.model';
 import { Component, Input, EventEmitter, Output} from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, Input, EventEmitter, Output} from '@angular/core';
 })
 export class UserImageComponent {
 
-  @Input() user: any;
+  @Input() user: User;
 
   @Output() childEvent = new EventEmitter<any>();
 

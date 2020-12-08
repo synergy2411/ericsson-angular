@@ -4,6 +4,9 @@
 
 <hr>
 
-<app-user></app-user>
+<button (click) = "onToggleUser()">Toggle User</button>
+
+<app-user *ngIf="bool" [title] = "title"></app-user>
+
 
 </div>
