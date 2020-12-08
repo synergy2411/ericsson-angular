@@ -22,7 +22,7 @@ OnInit {
 
   users: User[];
 
-  constructor() { }  //DI
+  constructor() { }
 
   public onMoreInfo(user: User): void {
     alert(`Mr. ${user.lastName}, is working with ${user.company}!`);

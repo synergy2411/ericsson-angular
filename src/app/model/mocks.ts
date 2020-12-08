@@ -9,7 +9,7 @@ export const USER_DATA: User[] = [{
   votes : 120,
   dob : new Date('Dec 21, 1965'),
   image : 'https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X_400x400.jpg'
-},{
+}, {
   firstName : 'steve',
   lastName : 'jobs',
   isWorking : false,
@@ -18,7 +18,7 @@ export const USER_DATA: User[] = [{
   votes : 180,
   dob : new Date('Aug 1, 1965'),
   image : 'https://addicted2success.com/wp-content/uploads/2017/11/10-Things-We-Can-Learn-From-the-Incredible-Steve-Jobs.jpg'
-},{
+}, {
   firstName : 'tim b.',
   lastName : 'lee',
   isWorking : true,
