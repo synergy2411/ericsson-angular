@@ -8,7 +8,7 @@ export const USER_DATA: User[] = [{
   company : 'Microsoft',
   votes : 120,
   dob : new Date('Dec 21, 1965'),
-  image : 'https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X_400x400.jpg'
+  image : 'assets/images/bill.jpg'
 }, {
   firstName : 'steve',
   lastName : 'jobs',
