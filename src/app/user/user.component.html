@@ -1,15 +1,24 @@
 <p>User works</p>
 
 <div class="container">
-
   <ul class="list-unstyled">
     <li>
-      <!-- <h1 [innerText] = "user.firstName"></h1> -->
-      <img [src]="user.image" class="img-responsive img-rounded">
-      <h1> {{ user.firstName }} {{ user.lastName }}</h1>
-      <p>Date of Birth : <span [innerText]="user.dob"></span></p>
-      <p>Income : {{ user.income }} </p>
+      <div class="card">
+        <div class="row">
+          <div class="col-sm-4 col-md-4">
+            <img [src]="user.image" class="img-thumbnail rounded-circle img-fluid"/>
+            <br />
+            <button (click)="onMoreInfo(user)" class="btn btn-info">
+              More Info
+            </button>
+          </div>
+          <div class="col-sm-8 col-md-8">
+            <h1>{{ user.firstName }} {{ user.lastName }}</h1>
+            <p>Date of Birth : <span [innerText]="user.dob"></span></p>
+            <p>Income : {{ user.income }}</p>
+          </div>
+        </div>
+      </div>
     </li>
   </ul>
-
 </div>

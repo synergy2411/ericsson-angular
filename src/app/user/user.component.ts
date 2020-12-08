@@ -16,4 +16,8 @@ export class UserComponent {
     dob : new Date('Dec 21, 1965'),
     image : 'https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X_400x400.jpg'
   };
+
+  public onMoreInfo(user: any): void {
+    alert(`Mr. ${user.lastName}, is working with ${user.company}!`);
+  }
 }
