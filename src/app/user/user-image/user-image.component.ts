@@ -12,6 +12,7 @@ export class UserImageComponent {
   @Output() childEvent = new EventEmitter<any>();
 
   onClick(user: any){
+    console.log('Clicked');
     this.childEvent.emit(user);
   }
 
