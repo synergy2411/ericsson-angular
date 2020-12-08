@@ -2,8 +2,12 @@
 
 <div class="container">
   <ul class="list-unstyled">
-    <li>
+    <li *ngFor="let user of users; index as i; first as isFirst; last as isLast; even as isEven; odd as isOdd;">
       <div class="card">
+        <!-- Index : {{ i }}
+        Is First ? {{ isFirst }}
+        Is Even? {{ isEven }}
+        Is Last? {{ isLast }} -->
         <div class="row">
           <div class="col-sm-4 col-md-4">
             <div class="text-center container">

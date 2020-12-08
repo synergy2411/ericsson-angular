@@ -20,7 +20,7 @@ OnInit {
 
   @Input() title: string;
 
-  user: User;
+  users: User[];
 
   constructor() { }  //DI
 
@@ -34,7 +34,7 @@ OnInit {
 
   ngOnInit() {
     // console.log('ngOnInit');
-    this.user = USER_DATA;
+    this.users = USER_DATA;
   }
   ngDoCheck() {
     // console.log('ngDoCheck');

@@ -2,8 +2,19 @@
 <!-- <ng-content select="header"></ng-content> -->
 
 <h1>{{ user.firstName }} {{ user.lastName }}</h1>
-<p>Date of Birth : <span [innerText]="user.dob"></span></p>
-<p>Income : {{ user.income }}</p>
+
+<!-- <p [ngClass]="['my-border', 'feature']">
+      Date of Birth : <span [innerText]="user.dob"></span></p> -->
+<!-- <p [ngClass]="messages">
+      Date of Birth : <span [innerText]="user.dob"></span></p> -->
+
+<p [ngStyle]="myStyles">
+  Date of Birth : <span [innerText]="user.dob"></span></p>
+
+<button (click)="onToggleStyle()">Toggle Style</button>
+
+
+<p *ngIf="user.isWorking; else ElseTemplate">Income : {{ user.income }}</p>
 
 <!-- <ng-content select=".my-content"></ng-content> -->
 
@@ -20,3 +31,15 @@
 </p>
 
 <!-- <ng-content select="footer"></ng-content> -->
+
+<ng-template #ElseTemplate>
+  <p>Mr. {{user.lastName}} is not working now!</p>
+</ng-template>
+
+
+<!-- <div [ngSwitch] = "value">
+  <div *ngSwitchCase="1">OUtput 1</div>
+  <div *ngSwitchCase="2">OUtput 2</div>
+  <div *ngSwitchCase="3">OUtput 3</div>
+  <div *ngSwitchCase="4">OUtput 4</div>
+</div> -->
