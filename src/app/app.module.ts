@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +13,7 @@ import { NationalCodePipe } from './pipes/national-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './component/auth/login/login.component';
 import { RegisterComponent } from './component/auth/register/register.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [                 // Component, Directives, Pipes
@@ -31,7 +33,7 @@ import { RegisterComponent } from './component/auth/register/register.component'
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],                  // Services
+  providers: [ DataService ],                  // Services
   bootstrap: [AppComponent]
 })
 export class AppModule { }

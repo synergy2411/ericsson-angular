@@ -18,4 +18,7 @@ export class LoginComponent implements OnInit {
     console.log('[PASSWORD]', form.value.password);
   }
 
+  // check(f : NgForm){
+
+  // }
 }

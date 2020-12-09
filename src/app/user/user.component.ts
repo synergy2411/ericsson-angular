@@ -1,4 +1,5 @@
-import { USER_DATA } from './../model/mocks';
+import { DataService } from './../services/data.service';
+// import { USER_DATA } from './../model/mocks';
 import { User } from './../model/user.model';
 import { AfterContentChecked } from '@angular/core';
 import { Component, Input, OnInit, DoCheck, AfterContentInit, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
@@ -22,7 +23,7 @@ OnInit {
 
   users: User[];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   public onMoreInfo(user: User): void {
     alert(`Mr. ${user.lastName}, is working with ${user.company}!`);
@@ -34,7 +35,8 @@ OnInit {
 
   ngOnInit() {
     // console.log('ngOnInit');
-    this.users = USER_DATA;
+    // this.users = USER_DATA;
+    this.users = this.dataService.getData();
   }
   ngDoCheck() {
     // console.log('ngDoCheck');
