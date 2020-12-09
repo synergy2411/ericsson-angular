@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipeDemoComponent implements OnInit {
 
-  contact_no = 9876541212;
+  contact_no = '9876541212';
 
   data$ = new Promise((resolve, reject) => {
 
     setTimeout(() => {
-      resolve('success')
+      resolve('success');
     }, 3000);
 
     // make XHR Call - 2S
@@ -23,16 +23,16 @@ export class PipeDemoComponent implements OnInit {
   todoList = [{
     label : 'pot the plant',
     status : 'done'
-  },{
+  }, {
     label : 'renew bike insurance',
     status : 'pending'
-  },{
+  }, {
     label : 'buy the jeans',
     status : 'done'
-  },{
+  }, {
     label : 'buy the pulses',
     status : 'pending'
-  }]
+  }];
 
 
 
@@ -40,5 +40,11 @@ export class PipeDemoComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  onAddNewItem() {
+    this.todoList.push({label : 'New Item', status : 'pending'});
+  }
+
+
 
 }

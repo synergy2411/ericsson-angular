@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'nationalcode',
 })
 export class NationalCodePipe implements PipeTransform {
-  transform(value: any, code: string) {
+  transform(value: any, code: string = 'IND') {
     switch (code) {
       case 'US':
         return '+1 ' + value;

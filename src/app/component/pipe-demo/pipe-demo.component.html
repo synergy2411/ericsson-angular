@@ -1,7 +1,7 @@
 <p class="display-4">
-  Data : {{ data$ | async | uppercase }} <br />
+  Data : {{ data$ | async }} <br />
 
-  Contact Number : {{ contact_no | nationalcode }}
+  Contact Number : {{ contact_no | nationalcode: "US" }}
 
   <!-- +91 987654321 -->
   <!-- +1 987654321 -->
@@ -13,20 +13,25 @@
   <div class="col-sm-6 col-md-6">
     <!-- <input type="text" [(ngModel)] = "filteredStatus" class="form-control"> -->
 
-    <select [(ngModel)] = 'filteredStatus' class="form-control">
-      <option value='done'>Done Tasks</option>
-      <option value='pending'>Pending Tasks</option>
+    <select [(ngModel)]="filteredStatus" class="form-control">
+      <option value="done">Done Tasks</option>
+      <option value="pending">Pending Tasks</option>
     </select>
-
   </div>
-  <div class="col-sm-6 col-md-6"></div>
+  <div class="col-sm-6 col-md-6">
+    <button class="btn btn-primary btn-block" (click)="onAddNewItem()">
+      Add Item
+    </button>
+  </div>
 </div>
-
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let todo of todoList | filter : filteredStatus ">
-    {{ todo.label | uppercase}}
-    <span class="badge badge-primary float-right">
-      {{ todo.status }}
-    </span>
-  </li>
-</ul>
+<br>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let todo of todoList | filter: filteredStatus">
+      {{ todo.label | uppercase }}
+      <span class="badge badge-primary float-right">
+        {{ todo.status }}
+      </span>
+    </li>
+  </ul>
+</div>
