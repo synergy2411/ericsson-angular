@@ -18,6 +18,17 @@
                     [formControl] = "email">
                 </div>
               </div>
+              <div [hidden] = "email.untouched || email.valid">
+                <div class="alert alert-danger">
+                  Some Problem with Email :
+                  <div [hidden]="!email.hasError('required')">
+                    - Email is mandatory field.
+                  </div>
+                  <div [hidden] = "!email.hasError('email')">
+                    - Email should be in proper format.
+                  </div>
+                </div>
+              </div>
             </div>
             <!-- Password -->
             <div class="form-group">
@@ -32,9 +43,26 @@
                     [formControl] = "password">
                 </div>
               </div>
+
+              <div [hidden]="password.valid || password.untouched">
+                <div class="alert alert-danger">
+                  Password is having some problem :
+                  <div [hidden]="!password.hasError('required')">
+                    - Password is mandatory field.
+                  </div>
+                  <div [hidden]="!password.hasError('minlength')">
+                    - Password should have 6 characters.
+                  </div>
+                  <div [hidden]="!password.hasError('needExclamation')">
+                    - Password should contain exclamation mark.
+                  </div>
+                </div>
+              </div>
+
             </div>
             <!-- button -->
-            <button class="btn btn-block btn-outline-primary">
+            <button class="btn btn-block btn-outline-primary"
+              (click)="onRegister()" [disabled] = "!registerForm.valid">
               Register
             </button>
           </form>

@@ -14,21 +14,30 @@ export class RegisterComponent implements OnInit {
   ]);
   password = new FormControl('', [
     Validators.required,
-    Validators.minLength(6)
+    Validators.minLength(6),
+    this.hasExclamationValidator
   ]);
 
-  registerForm : FormGroup;
+  registerForm: FormGroup;
 
-  constructor(private fb : FormBuilder) {
+  constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group({
       email : this.email,
       password : this.password
-    })
+    });
   }
 
-  onRegister(){
-    console.log(this.registerForm);
+  onRegister() {
+    console.log('[EMAIL]', this.registerForm.value.email);
+    console.log('[PASSWORD]', this.registerForm.value.password);
   }
+
+  hasExclamationValidator(input: FormControl) {
+    const hasExclamation = input.value.indexOf('!') >= 0;
+    return hasExclamation ? null : {needExclamation : true};
+  }
+
+
   ngOnInit() {
   }
 
