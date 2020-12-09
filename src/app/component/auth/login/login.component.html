@@ -5,7 +5,7 @@
         <div class="text-center">
           <p class="display-4">Login Form</p>
 
-          <form>
+          <form (ngSubmit)="onLogin(f)" #f = "ngForm">
             <!-- Email -->
             <div class="form-group">
               <div class="row">
@@ -41,13 +41,13 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-10 offset-sm-1 col-md-10 offset-md-1">
-                  <button class="btn btn-block btn-outline-success">
-                    Login
-                  </button>
+                  <input type="submit"
+                    value="Login" class="btn btn-block btn-outline-success"
+                    [disabled] = "f.invalid">
                 </div>
               </div>
             </div>
-
+              <!-- Form State : {{ f.invalid }} -->
           </form>
         </div>
       </div>
