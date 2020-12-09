@@ -7,6 +7,8 @@ import { UserComponent } from './user/user.component';
 import { UserImageComponent } from './user/user-image/user-image.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { PipeDemoComponent } from './component/pipe-demo/pipe-demo.component';
+import { NationalCodePipe } from './pipes/national-code.pipe';
 
 @NgModule({
   declarations: [                 // Component, Directives, Pipes
@@ -14,7 +16,9 @@ import { HighlightDirective } from './directives/highlight.directive';
     UserComponent,
     UserImageComponent,
     UserDetailComponent,
-    HighlightDirective
+    HighlightDirective,
+    PipeDemoComponent,
+    NationalCodePipe
   ],
   imports: [                      // Modules
     BrowserModule,

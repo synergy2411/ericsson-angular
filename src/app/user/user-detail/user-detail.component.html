@@ -1,7 +1,9 @@
 
 <!-- <ng-content select="header"></ng-content> -->
 
-<h1 appHighlight [myColor]="'yellow'">{{ user.firstName }} {{ user.lastName }}</h1>
+<!-- {{ user | json }} -->
+
+<h1 appHighlight [myColor]="'yellow'">{{ user.firstName | uppercase }} {{ user.lastName | uppercase }}</h1>
 
 <!-- <p [ngClass]="['my-border', 'feature']">
       Date of Birth : <span [innerText]="user.dob"></span></p> -->
@@ -9,12 +11,11 @@
       Date of Birth : <span [innerText]="user.dob"></span></p> -->
 
 <p [ngStyle]="myStyles">
-  Date of Birth : <span [innerText]="user.dob"></span></p>
+  Date of Birth : <span [innerText]="user.dob | date : 'MM/dd/yyyy'"></span></p>
 
 <button (click)="onToggleStyle()">Toggle Style</button>
 
-
-<p *ngIf="user.isWorking; else ElseTemplate">Income : {{ user.income }}</p>
+<p *ngIf="user.isWorking; else ElseTemplate">Income : {{ user.income | currency : 'INR' }}</p>
 
 <!-- Desugar If -->
 <!-- <ng-template [ngIf]="user.isWorking">
