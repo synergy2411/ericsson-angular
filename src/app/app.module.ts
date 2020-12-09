@@ -9,6 +9,7 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { PipeDemoComponent } from './component/pipe-demo/pipe-demo.component';
 import { NationalCodePipe } from './pipes/national-code.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [                 // Component, Directives, Pipes
@@ -18,7 +19,8 @@ import { NationalCodePipe } from './pipes/national-code.pipe';
     UserDetailComponent,
     HighlightDirective,
     PipeDemoComponent,
-    NationalCodePipe
+    NationalCodePipe,
+    FilterPipe
   ],
   imports: [                      // Modules
     BrowserModule,

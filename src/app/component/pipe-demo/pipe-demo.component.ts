@@ -18,6 +18,24 @@ export class PipeDemoComponent implements OnInit {
     // make XHR Call - 2S
   });
 
+  filteredStatus = '';
+
+  todoList = [{
+    label : 'pot the plant',
+    status : 'done'
+  },{
+    label : 'renew bike insurance',
+    status : 'pending'
+  },{
+    label : 'buy the jeans',
+    status : 'done'
+  },{
+    label : 'buy the pulses',
+    status : 'pending'
+  }]
+
+
+
   constructor() { }
 
   ngOnInit() {
