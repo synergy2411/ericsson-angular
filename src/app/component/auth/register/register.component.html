@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <p class="display-4 text-center">Register Form</p>
+
+          <form [formGroup] = "registerForm">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6 col-md-6">
+                  <label for="email">Email : </label>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                  <input type="text"
+                    class="form-control"
+                    name="email"
+                    [formControl] = "email">
+                </div>
+              </div>
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6 col-md-6">
+                  <label for="password">Password : </label>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                  <input type="password"
+                    class="form-control"
+                    name="password"
+                    [formControl] = "password">
+                </div>
+              </div>
+            </div>
+            <!-- button -->
+            <button class="btn btn-block btn-outline-primary">
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
