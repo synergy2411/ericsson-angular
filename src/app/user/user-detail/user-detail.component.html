@@ -1,7 +1,7 @@
 
 <!-- <ng-content select="header"></ng-content> -->
 
-<h1>{{ user.firstName }} {{ user.lastName }}</h1>
+<h1 appHighlight [myColor]="'yellow'">{{ user.firstName }} {{ user.lastName }}</h1>
 
 <!-- <p [ngClass]="['my-border', 'feature']">
       Date of Birth : <span [innerText]="user.dob"></span></p> -->
@@ -15,6 +15,12 @@
 
 
 <p *ngIf="user.isWorking; else ElseTemplate">Income : {{ user.income }}</p>
+
+<!-- Desugar If -->
+<!-- <ng-template [ngIf]="user.isWorking">
+  <p>Income : {{ user.income }}</p>
+</ng-template> -->
+
 
 <!-- <ng-content select=".my-content"></ng-content> -->
 
