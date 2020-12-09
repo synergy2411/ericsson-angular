@@ -33,7 +33,9 @@ import { DataService } from './services/data.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ DataService ],                  // Services
+  providers: [
+    // DataService
+  ],                  // Services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
