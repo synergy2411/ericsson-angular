@@ -42,6 +42,13 @@ export class AuthService {
     return this.token != null;
   }
 
+  onLogout(){
+    firebase.default.auth().signOut()
+      .then(resp => {
+        this.token=null;
+      }).catch(err => console.log(err));
+  }
+
 }
 
 // ng g s services/auth
