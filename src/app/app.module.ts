@@ -18,6 +18,7 @@ import { LoggerInterceptorService } from './services/logger-interceptor.service'
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserImageComponent } from './user/user-image/user-image.component';
 import { UserComponent } from './user/user.component';
+import { HeaderComponent } from './component/header/header.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { UserComponent } from './user/user.component';
     FilterPipe,
     LoginComponent,
     RegisterComponent,
-    ObservableDemoComponent
+    ObservableDemoComponent,
+    HeaderComponent
   ],
   imports: [                      // Modules
     BrowserModule,
