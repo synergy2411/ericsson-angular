@@ -1,3 +1,7 @@
+import { LoginGaurdService } from './services/login-gaurd.service';
+import { SpecificationComponent } from './component/product/specification/specification.component';
+import { OverviewComponent } from './component/product/overview/overview.component';
+import { ProductComponent } from './component/product/product.component';
 import { UserComponent } from "./user/user.component";
 import { Routes } from "@angular/router";
 import { LoginComponent } from "./component/auth/login/login.component";
@@ -30,6 +34,19 @@ export const APP_ROUTES: Routes = [
   {
     path: "users",
     component: UserComponent,
+    canActivate : [LoginGaurdService]
+  },{
+    path : 'products',
+    component : ProductComponent,
+    children : [
+      {
+        path : 'overview/:id/:name',
+        component : OverviewComponent
+      },{
+        path : 'specification',
+        component : SpecificationComponent
+      }
+    ]
   },
   {
     path: "**",

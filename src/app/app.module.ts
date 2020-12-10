@@ -19,6 +19,9 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserImageComponent } from './user/user-image/user-image.component';
 import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './component/header/header.component';
+import { ProductComponent } from './component/product/product.component';
+import { OverviewComponent } from './component/product/overview/overview.component';
+import { SpecificationComponent } from './component/product/specification/specification.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { HeaderComponent } from './component/header/header.component';
     LoginComponent,
     RegisterComponent,
     ObservableDemoComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductComponent,
+    OverviewComponent,
+    SpecificationComponent
   ],
   imports: [                      // Modules
     BrowserModule,
