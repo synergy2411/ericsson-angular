@@ -4,20 +4,20 @@
 
 <hr>
 
-<app-observable-demo></app-observable-demo>
+<!-- <app-observable-demo></app-observable-demo> -->
 
 <!-- <app-register></app-register> -->
 
-<!-- <app-login></app-login> -->
+<app-login></app-login>
 
 <!-- <app-pipe-demo></app-pipe-demo> -->
 
 
 <hr>
 
-<button (click) = "onToggleUser()">Toggle User</button>
+<!-- <button (click) = "onToggleUser()">Toggle User</button> -->
 
-<app-user *ngIf="bool" [title] = "title"></app-user>
+<app-user *ngIf="authService.isAuthenticated()" [title] = "title"></app-user>
 
 
 </div>
