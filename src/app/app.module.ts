@@ -1,3 +1,4 @@
+import { LoggerInterceptorService } from './services/logger-interceptor.service';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -41,6 +42,10 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
   providers: [{
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptorService,
+    multi : true
+  },{
+    provide : HTTP_INTERCEPTORS,
+    useClass : LoggerInterceptorService,
     multi : true
   }
     // DataService
