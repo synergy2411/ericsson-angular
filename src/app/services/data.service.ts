@@ -2,7 +2,7 @@ import { AuthService } from './auth.service';
 import { USER_DATA } from './../model/mocks';
 import { User } from './../model/user.model';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 
 @Injectable({
@@ -21,8 +21,12 @@ export class DataService {
   }
 
   getRemoteJsonUserData(){
+    // return this.httpClient
+    // .get(`https://ericsson-proj-default-rtdb.firebaseio.com/userdata.json`,{
+    //   params : new HttpParams().set("auth", this.authService.getToken())
+    // })
     return this.httpClient
-    .get(`https://ericsson-proj-default-rtdb.firebaseio.com/userdata.json?auth=${this.authService.getToken()}`)
+    .get(`https://ericsson-proj-default-rtdb.firebaseio.com/userdata.json`)
   }
 
 }
