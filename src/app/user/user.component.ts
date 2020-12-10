@@ -37,8 +37,10 @@ OnInit {
     // console.log('ngOnInit');
     // this.users = USER_DATA;
     // this.users = this.dataService.getData();
-    this.dataService.getLocalJsonUserData()
-      .subscribe(data => this.users = <User[]> data);
+    // this.dataService.getLocalJsonUserData()
+    //   .subscribe(data => this.users = <User[]> data);
+    this.dataService.getRemoteJsonUserData()
+      .subscribe(data => this.users = <User[]> data)
   }
   ngDoCheck() {
     // console.log('ngDoCheck');

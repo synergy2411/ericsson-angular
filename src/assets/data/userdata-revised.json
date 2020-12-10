@@ -1,0 +1,34 @@
+{
+  "userdata": [
+    {
+      "firstName": "Bill",
+      "lastName": "Gates",
+      "isWorking": true,
+      "income": 50000,
+      "company": "Microsoft",
+      "votes": 120,
+      "dob": "1965-12-20T18:30:00.000Z",
+      "image": "assets/images/bill.jpg"
+    },
+    {
+      "firstName": "steve",
+      "lastName": "jobs",
+      "isWorking": false,
+      "income": 0,
+      "company": "Apple",
+      "votes": 180,
+      "dob": "1965-07-31T18:30:00.000Z",
+      "image": "https://addicted2success.com/wp-content/uploads/2017/11/10-Things-We-Can-Learn-From-the-Incredible-Steve-Jobs.jpg"
+    },
+    {
+      "firstName": "tim b.",
+      "lastName": "lee",
+      "isWorking": true,
+      "income": 30000,
+      "company": "World Wide Web",
+      "votes": 100,
+      "dob": "1965-01-01T18:30:00.000Z",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Sir_Tim_Berners-Lee_%28cropped%29.jpg"
+    }
+  ]
+}

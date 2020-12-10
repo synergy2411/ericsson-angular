@@ -19,4 +19,8 @@ export class DataService {
     return this.httpClient.get("./assets/data/userdata.json")
   }
 
+  getRemoteJsonUserData(){
+    return this.httpClient.get("https://ericsson-proj-default-rtdb.firebaseio.com/userdata.json")
+  }
+
 }
