@@ -1,3 +1,4 @@
+import { CounterComponent } from './component/counter/counter.component';
 import { LoginGaurdService } from './services/login-gaurd.service';
 import { SpecificationComponent } from './component/product/specification/specification.component';
 import { OverviewComponent } from './component/product/overview/overview.component';
@@ -49,7 +50,11 @@ export const APP_ROUTES: Routes = [
     ]
   }, {
     path : 'lazy',
-    loadChildren : './lazy/lazy.module#LazyModule'       // path/to/moduleFile/NameOFModuleFile#ModuleClassName
+    // loadChildren : './lazy/lazy.module#LazyModule'       // path/to/moduleFile/NameOFModuleFile#ModuleClassName
+    loadChildren : () => import('./lazy/lazy.module').then(m => m.LazyModule)       // path/to/moduleFile/NameOFModuleFile#ModuleClassName
+  },{
+    path : 'counter',
+    component : CounterComponent
   },
   {
     path: '**',

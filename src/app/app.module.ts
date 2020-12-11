@@ -1,7 +1,11 @@
+import { ChartsModule, ThemeService } from 'ng2-charts';
+import { BarComponent } from './component/chart/bar/bar.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { StoreModule } from '@ngrx/store';
+
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
@@ -22,6 +26,10 @@ import { LoggerInterceptorService } from './services/logger-interceptor.service'
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserImageComponent } from './user/user-image/user-image.component';
 import { UserComponent } from './user/user.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { rootReducer } from './store/reducers/counter.reducer';
+import { CounterComponent } from './component/counter/counter.component';
 
 
 
@@ -41,7 +49,9 @@ import { UserComponent } from './user/user.component';
     HeaderComponent,
     ProductComponent,
     OverviewComponent,
-    SpecificationComponent
+    SpecificationComponent,
+    BarComponent,
+    CounterComponent
   ],
   imports: [                      // Modules
     BrowserModule,
@@ -49,7 +59,10 @@ import { UserComponent } from './user/user.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
-    EmployeeModule
+    EmployeeModule,
+    ChartsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    StoreModule.forRoot({reducer : rootReducer})
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,
@@ -59,7 +72,7 @@ import { UserComponent } from './user/user.component';
     provide : HTTP_INTERCEPTORS,
     useClass : LoggerInterceptorService,
     multi : true
-  }
+  }, ThemeService
     // DataService
   ],                  // Services
   bootstrap: [AppComponent]
