@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -62,7 +63,8 @@ import { CounterComponent } from './component/counter/counter.component';
     EmployeeModule,
     ChartsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    StoreModule.forRoot({reducer : rootReducer})
+    StoreModule.forRoot({reducer : rootReducer}),
+    StoreDevtoolsModule.instrument({logOnly : environment.production})
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,
