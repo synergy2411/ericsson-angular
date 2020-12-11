@@ -64,7 +64,8 @@ import { CounterComponent } from './component/counter/counter.component';
     ChartsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     StoreModule.forRoot({reducer : rootReducer}),
-    StoreDevtoolsModule.instrument({logOnly : environment.production})
+    StoreDevtoolsModule.instrument({logOnly : environment.production}),
+    ChartsModule
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,

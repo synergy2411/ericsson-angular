@@ -1,3 +1,4 @@
+import { BarComponent } from './component/chart/bar/bar.component';
 import { CounterComponent } from './component/counter/counter.component';
 import { LoginGaurdService } from './services/login-gaurd.service';
 import { SpecificationComponent } from './component/product/specification/specification.component';
@@ -55,6 +56,9 @@ export const APP_ROUTES: Routes = [
   },{
     path : 'counter',
     component : CounterComponent
+  },{
+    path : 'bar-chart',
+    component : BarComponent
   },
   {
     path: '**',
