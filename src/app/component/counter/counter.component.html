@@ -1,1 +1,16 @@
 <p class="display-4">Counter : {{ counter }} </p>
+
+<div class="btn-group">
+  <button class="btn btn-primary" (click)="onIncrement()">
+    Increment
+  </button>
+  <button class="btn btn-primary" (click)="onDecrement()">
+    Decrement
+  </button>
+  <button class="btn btn-primary" (click)="onAddNumber(10)">
+    Add Number
+  </button>
+  <button class="btn btn-primary" (click)="onSubtractNumber(5)">
+    Subtract Number
+  </button>
+</div>
