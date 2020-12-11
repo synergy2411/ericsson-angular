@@ -10,12 +10,14 @@ import * as counterActions from '../../store/actions/counter.actions';
 export class CounterComponent implements OnInit {
 
   counter : number = null;
+  result : number[];
   constructor(private store : Store<any>) { }
 
   ngOnInit() {
     this.store.subscribe(state => {
       console.log('[STATE]', state);
       this.counter = state.reducer.counter;
+      this.result = <number[]>[...state.reducer.result];
     })
   }
 
@@ -30,9 +32,15 @@ export class CounterComponent implements OnInit {
     this.store.dispatch(new counterActions.AddNumber(value));
   }
   onSubtractNumber(value : number){
-    // this.store.dispatch({ type : counterActions.SUBTRACT_NUMBER});
+    this.store.dispatch(new counterActions.SubtractNumber(value));
   }
-
+  onStoreResult(){
+    this.store.dispatch(new counterActions.StoreResult());
+  }
+  onDeleteItem(idx : number){
+    console.log('[INDEX]', idx);
+    this.store.dispatch(new counterActions.DeleteResult(idx));
+  }
 }
 
 // npm install @ngrx/store --save
