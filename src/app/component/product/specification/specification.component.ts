@@ -11,9 +11,13 @@ export class SpecificationComponent implements OnInit {
   constructor(private route : ActivatedRoute) { }
 
   ngOnInit() {
+    // snapshot of URL
+    console.log(this.route.snapshot.queryParams);
+
+    // Observable consume - keep an eye on data-source
     this.route.queryParams.subscribe(params => {
       console.log(params);
-    })
+    });
   }
 
 }

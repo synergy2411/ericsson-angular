@@ -2,55 +2,58 @@ import { LoginGaurdService } from './services/login-gaurd.service';
 import { SpecificationComponent } from './component/product/specification/specification.component';
 import { OverviewComponent } from './component/product/overview/overview.component';
 import { ProductComponent } from './component/product/product.component';
-import { UserComponent } from "./user/user.component";
-import { Routes } from "@angular/router";
-import { LoginComponent } from "./component/auth/login/login.component";
-import { RegisterComponent } from "./component/auth/register/register.component";
-import { ObservableDemoComponent } from "./component/observable-demo/observable-demo.component";
-import { PipeDemoComponent } from "./component/pipe-demo/pipe-demo.component";
+import { UserComponent } from './user/user.component';
+import { Routes } from '@angular/router';
+import { LoginComponent } from './component/auth/login/login.component';
+import { RegisterComponent } from './component/auth/register/register.component';
+import { ObservableDemoComponent } from './component/observable-demo/observable-demo.component';
+import { PipeDemoComponent } from './component/pipe-demo/pipe-demo.component';
 
 export const APP_ROUTES: Routes = [
   {
-    path: "",
-    redirectTo: "login",
-    pathMatch: "full",
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
   {
-    path: "login",
+    path: 'login',
     component: LoginComponent,
   },
   {
-    path: "register",
+    path: 'register',
     component: RegisterComponent,
   },
   {
-    path: "pipe-demo",
+    path: 'pipe-demo',
     component: PipeDemoComponent,
   },
   {
-    path: "observable-demo",
+    path: 'observable-demo',
     component: ObservableDemoComponent,
   },
   {
-    path: "users",
+    path: 'users',
     component: UserComponent,
     canActivate : [LoginGaurdService]
-  },{
+  }, {
     path : 'products',
     component : ProductComponent,
     children : [
       {
         path : 'overview/:id/:name',
         component : OverviewComponent
-      },{
+      }, {
         path : 'specification',
         component : SpecificationComponent
       }
     ]
+  }, {
+    path : 'lazy',
+    loadChildren : './lazy/lazy.module#LazyModule'       // path/to/moduleFile/NameOFModuleFile#ModuleClassName
   },
   {
-    path: "**",
-    redirectTo: "login",
-    pathMatch: "full",
+    path: '**',
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
 ];

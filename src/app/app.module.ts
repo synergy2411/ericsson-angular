@@ -3,15 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { EmployeeModule } from './employee/employee.module';
-
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { LoginComponent } from './component/auth/login/login.component';
 import { RegisterComponent } from './component/auth/register/register.component';
+import { HeaderComponent } from './component/header/header.component';
 import { ObservableDemoComponent } from './component/observable-demo/observable-demo.component';
 import { PipeDemoComponent } from './component/pipe-demo/pipe-demo.component';
+import { OverviewComponent } from './component/product/overview/overview.component';
+import { ProductComponent } from './component/product/product.component';
+import { SpecificationComponent } from './component/product/specification/specification.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { EmployeeModule } from './employee/employee.module';
 import { FilterPipe } from './pipes/filter.pipe';
 import { NationalCodePipe } from './pipes/national-code.pipe';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
@@ -19,10 +22,7 @@ import { LoggerInterceptorService } from './services/logger-interceptor.service'
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserImageComponent } from './user/user-image/user-image.component';
 import { UserComponent } from './user/user.component';
-import { HeaderComponent } from './component/header/header.component';
-import { ProductComponent } from './component/product/product.component';
-import { OverviewComponent } from './component/product/overview/overview.component';
-import { SpecificationComponent } from './component/product/specification/specification.component';
+
 
 
 @NgModule({
@@ -55,7 +55,7 @@ import { SpecificationComponent } from './component/product/specification/specif
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptorService,
     multi : true
-  },{
+  }, {
     provide : HTTP_INTERCEPTORS,
     useClass : LoggerInterceptorService,
     multi : true
